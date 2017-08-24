@@ -1,0 +1,17 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://www.ehcache.org/ehcache.xsd"
+                      updateCheck="true" name="KAFKA">
+    
+        <diskStore path="./cache/hibernate"/>
+        <defaultCache 
+                eternal="false" 
+                maxEntriesLocalHeap="1000" 
+                timeToIdleSeconds="21600" 
+                overflowToDisk="false" 
+                diskPersistent="false" 
+                diskExpiryThreadIntervalSeconds="300"
+                memoryStoreEvictionPolicy="LRU"/>
+
+        <cache name="in.co.nmsworks.hibernate5.domain.Event" maxEntriesLocalHeap="1000" eternal="true" overflowToDisk="true" diskPersistent="true"/>
+    
+</ehcache>

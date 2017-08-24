@@ -1,0 +1,43 @@
+<c3p0-config>
+
+    <!-- Pl discuss with developers before changing this -->
+	<default-config>
+		<property name="minPoolSize">2</property>
+		<property name="maxPoolSize">15</property>
+		<property name="numHelperThreads">3</property>
+		<property name="idleConnectionTestPeriod">3000</property>
+
+		<!-- Determines how many connections at a time c3p0 will try to acquire
+		when the pool is exhausted. Recommended conf is max_connections / 10 -->
+		<property name="acquireIncrement">5</property>
+
+		<!--configure connection idle timeout interval-->
+		<property name="maxIdleTime">5</property>
+		
+		<!-- It is useful when threadPool is under congestion and it causes the client Threads
+		to perform the checkin operations synchronously. It's likely to improve performance
+		when 'testConnectionOnCheckin' is set to false -->
+		<property name="forceSynchronousCheckins">true</property>
+		
+		<property name="unreturnedConnectionTimeout">7200</property>
+		<property name="debugUnreturnedConnectionStackTraces">true</property>
+		
+		<!-- max_statements: Oracle = 0, MySQL = 1000 -->
+		<!-- <property name="maxStatements">0</property> -->
+		
+		<!-- To be certain to avoid any bottleneck at Statement acquisition, maxStatements must be[maxPoolSize x numberOfPreparedStatements] --> 
+		<!-- <property name="maxStatementsPerConnection">1000</property> -->
+
+		<!--  Connection testing for every check out from C3PO connection pool.
+ 		Enable this property for additional connection  health testing. This is costly operation
+ 		-->
+		<!-- This is for Oracle -->
+		<!-- <property name="testConnectionOnCheckout">true</property>
+		<property name="preferredTestQuery">SELECT 1 FROM DUAL</property> -->
+
+		<!-- This is for MySQL -->
+		<!-- <property name="testConnectionOnCheckout">true</property>
+		<property name="preferredTestQuery">SELECT NOW()</property> -->
+	</default-config>
+
+</c3p0-config>
