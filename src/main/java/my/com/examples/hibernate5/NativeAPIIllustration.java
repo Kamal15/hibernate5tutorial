@@ -1,8 +1,8 @@
-package in.co.nmsworks.hibernate5;
+package my.com.examples.hibernate5;
 
-import in.co.nmsworks.hibernate5.domain.Address;
-import in.co.nmsworks.hibernate5.domain.Event;
-import in.co.nmsworks.hibernate5.domain.Person;
+import my.com.examples.hibernate5.domain.Address;
+import my.com.examples.hibernate5.domain.Event;
+import my.com.examples.hibernate5.domain.Person;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -14,18 +14,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.*;
 
-/**
- * Created by kamal (kamal@nmsworks.co.in) on 2/4/17.
- * <p>
- * Copyright 2016-2017 NMSWorks Software Pvt Ltd. All rights reserved.
- * NMSWorks PROPRIETARY/CONFIDENTIAL. Use is subject to licence terms.
- */
 public class NativeAPIIllustration {
     
     private static final Logger logger = LoggerFactory.getLogger(NativeAPIIllustration.class);
     private static final SessionFactory sf = HibernateUtil.sf;
-    
-    public static void testBasicPostCommitListeners() throws SQLException {
+
+    @SuppressWarnings("unchecked")
+    static void testBasicPostCommitListeners() {
         Session session = sf.openSession();
         Event e1 = new Event("Our first Event!!", 25, new Date());
         Event e2 = new Event("A follow up event", 26, new Date());
@@ -82,10 +77,10 @@ public class NativeAPIIllustration {
         }
     }
 
-    public static String [][] resultSetAsStringArray(ResultSet resultSet	) throws DatabaseException {
-        java.sql.ResultSetMetaData metaData = null;
-        List<String> queryResult = new LinkedList<String>();
-        int columns = -1;
+    static String [][] resultSetAsStringArray(ResultSet resultSet	) throws DatabaseException {
+        java.sql.ResultSetMetaData metaData;
+        List<String> queryResult = new LinkedList<>();
+        int columns;
         try {
             metaData = resultSet.getMetaData();
             columns = metaData.getColumnCount();
@@ -124,6 +119,7 @@ public class NativeAPIIllustration {
         return result;
     }
 
+    @SuppressWarnings("unchecked")
     public static void testCollectionPostCommitListener() {
         Set<Address> addressSet = new HashSet<>();
         addressSet.add(new Address("AA", "AA", 600021, "India"));
@@ -172,7 +168,7 @@ public class NativeAPIIllustration {
         session.close();
     }
 
-    public static void main(String[] args) throws InterruptedException, SQLException {
+    public static void main(String[] args) {
         
         testBasicPostCommitListeners();
         // testCollectionPostCommitListener();
@@ -186,11 +182,11 @@ public class NativeAPIIllustration {
     
     public static class DatabaseException extends SQLException {
         
-        public DatabaseException(String message) {
+        DatabaseException(String message) {
             super(message);
         }
         
-        public DatabaseException(String message, Throwable throwable) {
+        DatabaseException(String message, Throwable throwable) {
             super(message, throwable);
         }
     }

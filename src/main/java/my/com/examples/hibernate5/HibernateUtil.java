@@ -1,4 +1,4 @@
-package in.co.nmsworks.hibernate5;
+package my.com.examples.hibernate5;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -10,15 +10,9 @@ import org.hibernate.engine.config.spi.ConfigurationService;
 import java.util.Map;
 import java.util.Properties;
 
-/**
- * Created by kamal (kamal@nmsworks.co.in) on 2/4/17.
- * <p>
- * Copyright 2016-2017 NMSWorks Software Pvt Ltd. All rights reserved.
- * NMSWorks PROPRIETARY/CONFIDENTIAL. Use is subject to licence terms.
- */
 public class HibernateUtil {
     
-    public static final SessionFactory sf = buildSessionFactory();
+    static final SessionFactory sf = buildSessionFactory();
 
     private static SessionFactory buildSessionFactory() {
 
@@ -47,7 +41,7 @@ public class HibernateUtil {
         return null;
     }
     
-    public static void shutdown() {
+    static void shutdown() {
         if (sf != null) {
             sf.close();
         }

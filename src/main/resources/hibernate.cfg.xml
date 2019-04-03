@@ -50,24 +50,24 @@
         <!-- Enable Hibernate's automatic session context management -->
         <property name="current_session_context_class">thread</property>
 
-        <mapping resource="in/co/nmsworks/hibernate5/domain/Event.hbm.xml"/>
-        <mapping resource="in/co/nmsworks/hibernate5/domain/Person.hbm.xml"/>
-        <mapping resource="in/co/nmsworks/hibernate5/domain/Address.hbm.xml"/>
+        <mapping resource="my/com/examples/hibernate5/domain/Event.hbm.xml"/>
+        <mapping resource="my/com/examples/hibernate5/domain/Person.hbm.xml"/>
+        <mapping resource="my/com/examples/hibernate5/domain/Address.hbm.xml"/>
         
         <event type="post-commit-insert">
-            <listener class="in.co.nmsworks.hibernate5.listener.DummyListener"/>
+            <listener class="my.com.examples.hibernate5.listener.DummyListener"/>
         </event>
         
         <event type="post-commit-update">
-            <listener class="in.co.nmsworks.hibernate5.listener.DummyListener"/>
+            <listener class="my.com.examples.hibernate5.listener.DummyListener"/>
         </event>
         
         <event type="post-commit-delete">
-            <listener class="in.co.nmsworks.hibernate5.listener.DummyListener"/>
+            <listener class="my.com.examples.hibernate5.listener.DummyListener"/>
         </event>
         
         <event type="post-collection-update">
-            <listener class="in.co.nmsworks.hibernate5.listener.DummyCollectionEventListener"/>
+            <listener class="my.com.examples.hibernate5.listener.DummyCollectionEventListener"/>
         </event>
         
     </session-factory>

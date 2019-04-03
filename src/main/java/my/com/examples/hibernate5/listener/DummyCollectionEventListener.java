@@ -1,9 +1,6 @@
-package in.co.nmsworks.hibernate5.listener;
+package my.com.examples.hibernate5.listener;
 
-import in.co.nmsworks.hibernate5.dao.MyPostCollectionUpdateEvent;
-import org.hibernate.collection.internal.PersistentList;
-import org.hibernate.collection.internal.PersistentMap;
-import org.hibernate.collection.internal.PersistentSet;
+import my.com.examples.hibernate5.dao.MyPostCollectionUpdateEvent;
 import org.hibernate.collection.spi.PersistentCollection;
 import org.hibernate.event.spi.AbstractCollectionEvent;
 import org.hibernate.event.spi.PostCollectionUpdateEvent;
@@ -11,15 +8,6 @@ import org.hibernate.event.spi.PostCollectionUpdateEventListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.List;
-import java.util.Map;
-
-/**
- * Created by kamal (kamal@nmsworks.co.in) on 2/4/17.
- * <p>
- * Copyright 2016-2017 NMSWorks Software Pvt Ltd. All rights reserved.
- * NMSWorks PROPRIETARY/CONFIDENTIAL. Use is subject to licence terms.
- */
 public class DummyCollectionEventListener implements PostCollectionUpdateEventListener { 
     
     private final Logger logger = LoggerFactory.getLogger(DummyCollectionEventListener.class);
@@ -56,7 +44,7 @@ public class DummyCollectionEventListener implements PostCollectionUpdateEventLi
     private void printEvent(String header, AbstractCollectionEvent event) {
         final PersistentCollection persistentCollection = event.getCollection();
         String role = persistentCollection.getRole();
-        String propertyName = role.substring(role.lastIndexOf(".") + 1, role.length());
+        String propertyName = role.substring(role.lastIndexOf(".") + 1);
         Object oldObjects = ((MyPostCollectionUpdateEvent) event).getOldObj();
         
         logger.info("************************************");

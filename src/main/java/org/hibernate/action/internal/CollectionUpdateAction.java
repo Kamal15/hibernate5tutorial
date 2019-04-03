@@ -1,6 +1,6 @@
 package org.hibernate.action.internal;
 
-import in.co.nmsworks.hibernate5.dao.MyPostCollectionUpdateEvent;
+import my.com.examples.hibernate5.dao.MyPostCollectionUpdateEvent;
 import org.hibernate.AssertionFailure;
 import org.hibernate.HibernateException;
 import org.hibernate.collection.spi.PersistentCollection;
@@ -12,12 +12,6 @@ import org.hibernate.pretty.MessageHelper;
 
 import java.io.Serializable;
 
-/**
- * Created by kamal (kamal@nmsworks.co.in) on 2/4/17.
- * <p>
- * Copyright 2016-2017 NMSWorks Software Pvt Ltd. All rights reserved.
- * NMSWorks PROPRIETARY/CONFIDENTIAL. Use is subject to licence terms.
- */
 public class CollectionUpdateAction extends CollectionAction {
 
     private final boolean emptySnapshot;

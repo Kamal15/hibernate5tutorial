@@ -1,4 +1,4 @@
-package in.co.nmsworks.hibernate5.listener;
+package my.com.examples.hibernate5.listener;
 
 import org.hibernate.event.spi.*;
 import org.hibernate.persister.entity.EntityPersister;
@@ -7,12 +7,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 
-/**
- * Created by kamal (kamal@nmsworks.co.in) on 2/4/17.
- * <p>
- * Copyright 2016-2017 NMSWorks Software Pvt Ltd. All rights reserved.
- * NMSWorks PROPRIETARY/CONFIDENTIAL. Use is subject to licence terms.
- */
 public class DummyListener implements PostCommitInsertEventListener, PostCommitUpdateEventListener, 
         PostCommitDeleteEventListener {
 

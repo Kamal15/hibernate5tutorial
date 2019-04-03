@@ -1,13 +1,7 @@
-package in.co.nmsworks.hibernate5.domain;
+package my.com.examples.hibernate5.domain;
 
 import java.io.Serializable;
 
-/**
- * Created by kamal (kamal@nmsworks.co.in) on 2/4/17.
- * <p>
- * Copyright 2016-2017 NMSWorks Software Pvt Ltd. All rights reserved.
- * NMSWorks PROPRIETARY/CONFIDENTIAL. Use is subject to licence terms.
- */
 public class Address implements Serializable {
 
     private int addressId;

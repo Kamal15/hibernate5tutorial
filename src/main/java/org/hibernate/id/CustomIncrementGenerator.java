@@ -19,12 +19,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
-/**
- * Created by kamal (kamal@nmsworks.co.in) on 2/6/17.
- * <p>
- * Copyright 2016-2017 NMSWorks Software Pvt Ltd. All rights reserved.
- * NMSWorks PROPRIETARY/CONFIDENTIAL. Use is subject to licence terms.
- */
 public class CustomIncrementGenerator extends IncrementGenerator {
 
     private static final CoreMessageLogger LOG = CoreLogging.messageLogger( CustomIncrementGenerator.class );

@@ -12,6 +12,6 @@
                 diskExpiryThreadIntervalSeconds="300"
                 memoryStoreEvictionPolicy="LRU"/>
 
-        <cache name="in.co.nmsworks.hibernate5.domain.Event" maxEntriesLocalHeap="1000" eternal="true" overflowToDisk="true" diskPersistent="true"/>
+        <cache name="my.com.examples.hibernate5.domain.Event" maxEntriesLocalHeap="1000" eternal="true" overflowToDisk="true" diskPersistent="true"/>
     
 </ehcache>
